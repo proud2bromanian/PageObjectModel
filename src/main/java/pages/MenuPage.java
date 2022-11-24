@@ -20,4 +20,9 @@ public class MenuPage {
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
 	}
+	
+	public ContactsPage navigateToContact() {
+		driver.findElement(contactLink).click();
+		return new ContactsPage(driver);
+	}
 }
