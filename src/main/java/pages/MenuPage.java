@@ -11,11 +11,9 @@ public class MenuPage {
 		this.driver = driver;
 	}
 	
-	public By loginLink = By.linkText("Login");
-	
-	
+	public By loginLink = By.linkText("Login");	
 	public By contactLink = By.linkText("CONTACTS");
-	
+	public By shopLink = By.linkText("BOOKS");
 	
 	public void navigateTo(By locator) {
 		driver.findElement(locator).click();

@@ -102,6 +102,7 @@ replay_pid*
 	
 target/
 test-output/
+screenshots/
 
 
 
