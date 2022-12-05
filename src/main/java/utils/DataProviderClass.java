@@ -7,7 +7,7 @@ public class DataProviderClass {
 	
 	public Object[][] booksNameDataProvider(){
 		
-		Object[][] data = new Object[4][2];
+		Object[][] data = new Object[5][2];
 		data[0][0] = "The forest";	
 		data[0][1] = "book2.jpg";
 		
