@@ -18,6 +18,6 @@ public class DataProviderBooksSearchTest extends BaseTest {
 		Thread.sleep(3000);
 		
 		WebElement element = driver.findElement(By.cssSelector("div[data-image*='"+bookPictureName+"']"));
-	assertTrue(element.isDisplayed());	
+		assertTrue(element.isDisplayed());	
 	}
 }
