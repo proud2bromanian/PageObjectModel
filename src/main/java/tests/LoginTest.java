@@ -17,30 +17,22 @@ public class LoginTest extends BaseTest {
 		MenuPage menu = new MenuPage(driver);
 		LoginPage loginPage = new LoginPage(driver);
 		
+		menu.navigateTo(menu.loginLink);		
+		loginPage.loginInApp("TestUser", "12345@67890");	
 		
-
-	
-		
-		
-		menu.navigateTo(menu.loginLink);
-		
-		
-		loginPage.loginInApp("TestUser", "12345@67890");
-		
-		assertTrue(loginPage.checkMsgIsDisplayed(loginPage.loginSuccessMsg));	
-		loginPage.logoutButtonFromApp();
+		assertTrue(loginPage.checkElementIsDisplayed(loginPage.loginSuccessMsg));
+		loginPage.logoutFromApp();
 	}
 	@Test(priority=2)
 	public void invalidlofinTest() {
 		
 		MenuPage menu = new MenuPage(driver);
 		LoginPage loginPage = new LoginPage(driver);
-	
-		menu.navigateTo(menu.loginLink);
 		
-		
+		menu.navigateTo(menu.loginLink);		
 		loginPage.loginInApp("TestUser", "1234");
-		assertTrue(loginPage.checkMsgIsDisplayed(loginPage.loginErrorMsg));
+		
+		assertTrue(loginPage.checkElementIsDisplayed(loginPage.loginErrorMsg));
 	}
 
 }
