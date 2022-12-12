@@ -26,7 +26,7 @@ public class BaseTest {
 public static WebDriver driver;
 public MenuPage menu;	
 public BasePage app;
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setup() {
 		
 		driver = WebDriverManager.chromiumdriver().create();
@@ -41,7 +41,7 @@ public BasePage app;
 		
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(6000);
 		driver.quit();

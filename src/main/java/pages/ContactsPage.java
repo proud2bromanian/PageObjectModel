@@ -3,6 +3,8 @@ package pages;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
+import javax.swing.text.html.CSS;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,6 +27,18 @@ public class ContactsPage extends SeleniumWrappers  {
 	
 	public By messageSentMsg = By.cssSelector("div[class='wpcf7-response-output']");
 	public By emptyFieldMsg = By.cssSelector("span[class='wpcf7-not-valid-tip']");
+	
+	public By zoomOut = By.cssSelector("button[title='Zoom out']");
+	public By zoomIn  = By.cssSelector("button[title='Zoom in']");
+	public By iframe = By.tagName("iframe");
+	
+	public void zoomMap(By locator) {
+		driver.switchTo().frame(getWebElement(iframe));
+		click(locator);
+	}
+	
+	
+	
 	public void sendMessage(String name, String email, String subject, String message) {
 		
 		driver.findElement(nameField).sendKeys(name);

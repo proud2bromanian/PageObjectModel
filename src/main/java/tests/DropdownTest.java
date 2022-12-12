@@ -12,17 +12,17 @@ import utils.BaseTest;
 
 public class DropdownTest extends BaseTest {
 
-	@Test(priority = 1)	
+	@Test(priority = 1, groups="ProductFunctionality")	
 	public void selectByValueTest() {
 		
 		app.menu.navigateTo(app.menu.shopLink);
 		//ShopPage shop = new ShopPage(driver);
 		app.shop.filterByValue("price-desc");
 		assertEquals(driver.getCurrentUrl(), "https://keybooks.ro/shop/?orderby=price-desc");
-		assertEquals(app.shop.getCurrentSelectedOption(),"Sort by price: high to low2");
+		assertEquals(app.shop.getCurrentSelectedOption(),"Sort by price: high to low");
 	}
 	
-	@Test(priority = 2)	
+	@Test(priority = 2, groups="ProductFunctionality")	
 	public void selectByIndexTest() {
 		menu.navigateTo(menu.shopLink);
 		ShopPage shop = new ShopPage(driver);
@@ -30,7 +30,7 @@ public class DropdownTest extends BaseTest {
 		assertEquals(shop.getCurrentSelectedOption(),"Sort by latest");
 		
 	}
-	@Test(priority = 3)
+	@Test(priority = 3, groups="ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		menu.navigateTo(menu.shopLink);
 		ShopPage shop = new ShopPage(driver);
