@@ -22,6 +22,7 @@ public class MenuPage extends SeleniumWrappers {
 	public By homeLink = By.linkText("HOME");
 	public By eventsLink = By.linkText("EVENTS");
 	public By blogLink = By.linkText("BLOG");
+	public By blogClassicLink = By.linkText("Classic");
 	public By aboutLink = By.linkText("ABOUT");
 	public By blogSubMenuMasonry = By.xpath("//a[contains(text(),'Masonry')]");
 	public By blogSubMenuMasonrysubMenu2 = By.xpath("//a[contains(text(),'Masonry 2 ')]");
@@ -43,7 +44,12 @@ public class MenuPage extends SeleniumWrappers {
 		driver.findElement(contactLink).click();
 		return new ContactsPage(driver);
 	}
-	 
+	/*
+	 * public BlogClassicPage navigateToBlog() {
+	 * driver.findElement(blogLink).click();
+	 * driver.findElement(blogClassicLink).click(); return new
+	 * BlogClassicPage(driver); }
+	 */
 	
 	
 	
